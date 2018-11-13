@@ -9,3 +9,5 @@ Un'altra ancora
 Modifica!!
 
 e via così
+
+{p.modifica}
