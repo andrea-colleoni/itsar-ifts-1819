@@ -8,7 +8,9 @@ Un'altra ancora
 
 e via così
 
+e avanti
 
+<<<<<<< HEAD
 
 
 
@@ -16,3 +18,5 @@ e via così
 
 
 holaaaaa :) :)
+=======
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
