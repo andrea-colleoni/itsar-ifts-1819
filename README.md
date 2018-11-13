@@ -12,6 +12,7 @@ Modifica!!
 e via così
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Modifica di Lisa
 
 modifica.p
@@ -26,3 +27,12 @@ modifica{p}
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 
 modifica.pe
+=======
+nihao!!!
+
+
+
+non so che modifica fare ma lo faccio lo stesso
+=======
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
