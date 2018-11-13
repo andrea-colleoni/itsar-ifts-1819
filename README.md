@@ -5,6 +5,7 @@ Modifica di Andrea
 Un'altra modifica
 
 Un'altra ancora
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 Modifica!!
@@ -13,20 +14,26 @@ Modifica!!
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 
 MODIFICA FABBRO
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 
-e via così
+e via cosï¿½
 <<<<<<< HEAD
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 =======
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 Modifica!!
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 e via cosï¿½
@@ -37,8 +44,11 @@ e via cosï¿½
 Modifica!!
 
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
-e via così
+=======
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
+e via cosï¿½
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Modifica di Lisa
@@ -54,16 +64,19 @@ e avanti
 <<<<<<< HEAD
 <<<<<<< HEAD
 
+=======
+nihao!!!
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 
-
+CIAO :)
 
 non so che modifica fare ma lo faccio lo stesso
-
-MODIFICA FABBRO
->>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 =======
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
+<<<<<<< HEAD
 =======
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
 non so che modifica fare ma lo faccio lo stesso
+>>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
+=======
 >>>>>>> branch 'master' of https://github.com/andrea-colleoni/itsar-ifts-1819.git
