@@ -9,8 +9,8 @@ public class UsaLaClassePersona {
 		Persona p3 = new Persona();
 
 		p1.nome = "Mario";
-		p2.nome = "Anna";
 		p3.nome = "Luigi";
+		p2.nome = "Anna";
 		
 		p1.cammina();
 		p2.cammina();
