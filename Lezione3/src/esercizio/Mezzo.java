@@ -32,7 +32,7 @@ public class Mezzo {
 	public void setColore(String colore) {
 		this.colore = colore;
 	}
-
+	// commento
 	public int getNumeroPosti() {
 		return numeroPosti;
 	}
