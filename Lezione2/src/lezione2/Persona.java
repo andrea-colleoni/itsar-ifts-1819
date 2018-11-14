@@ -11,7 +11,7 @@ public class Persona {
 	}
 	
 	String nomeCompleto() {
-		String nomeCompleto = nome + " " + cognome; // variabile locale
+		String nomeCompleto = this.nome + " " + cognome; // variabile locale
 		return nomeCompleto;
 	}
 	
