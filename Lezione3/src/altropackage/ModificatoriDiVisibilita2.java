@@ -6,6 +6,5 @@ public class ModificatoriDiVisibilita2 {
 	public static void main(String[] args) {
 		PoligonoRegolare pr = new PoligonoRegolare();
 		
-		pr.
 	}
 }
