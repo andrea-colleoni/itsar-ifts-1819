@@ -33,6 +33,7 @@ public class Mezzo {
 		this.colore = colore;
 	}
 	// un'altra cosa...
+	// commento
 	public int getNumeroPosti() {
 		return numeroPosti;
 	}
