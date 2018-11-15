@@ -13,6 +13,8 @@ public class Gara {
 		gara[2] = new Automobile("Range Rover");
 		gara[3] = new Automobile("Porsche");
 		gara[4] = new Automobile("Ferrari");
+		gara = new Automobile[6];
+		gara[5] = new Automobile("Enterprise");
 
 		//for (int i = 0; i < gara.length; i++) {
 		for (Automobile auto : gara) {
