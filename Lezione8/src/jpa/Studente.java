@@ -1,9 +1,13 @@
 package jpa;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -19,7 +23,13 @@ public class Studente {
 	private String indirizzo;
 	private String email;
 	
+	@ManyToMany(mappedBy="studenti", cascade=CascadeType.ALL)
+	private List<Corso> iscrizioni;
 	
+	public Studente() {
+		super();
+		iscrizioni = new ArrayList<Corso>();
+	}
 	public int getMatricola() {
 		return matricola;
 	}
@@ -55,6 +65,12 @@ public class Studente {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public List<Corso> getIscrizioni() {
+		return iscrizioni;
+	}
+	public void setIscrizioni(List<Corso> iscrizioni) {
+		this.iscrizioni = iscrizioni;
 	}
 	
 	
