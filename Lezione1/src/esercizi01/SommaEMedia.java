@@ -17,7 +17,7 @@ public class SommaEMedia {
 		while (i <= 100) {
 			sommaWhile = sommaWhile + i;
 			i++;
-		}
+		} 
 		System.out.println("La somma dei primi 100 numeri è " + sommaWhile);
 		System.out.println("La media dei primi 100 numeri è " + ((float) sommaWhile / 100));
 
