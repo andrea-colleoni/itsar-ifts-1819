@@ -1,5 +1,6 @@
 package modello;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +25,14 @@ public class Ordine {
 	
 	@OneToMany(mappedBy="ordine")
 	private List<RigaOrdine> righeOrdine;
+	
+	public void addRigaOrdine(RigaOrdine ro) {
+		if (this.righeOrdine == null) {
+			this.righeOrdine = new ArrayList<>();
+		}
+		this.righeOrdine.add(ro);
+		ro.setOrdine(this);
+	}
 	
 	public Date getDataOrdine() {
 		return dataOrdine;

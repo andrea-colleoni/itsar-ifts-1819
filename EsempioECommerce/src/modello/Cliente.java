@@ -1,5 +1,6 @@
 package modello;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -20,6 +21,13 @@ public class Cliente {
 	@OneToMany(mappedBy="cliente")
 	private List<Ordine> ordini;
 	
+	public void addOrdine(Ordine o) {
+		if (this.ordini == null) {
+			this.ordini = new ArrayList<>();
+		}
+		this.ordini.add(o);
+		o.setCliente(this);
+	}
 	
 	public String getRagioneSociale() {
 		return ragioneSociale;

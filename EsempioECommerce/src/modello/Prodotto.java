@@ -1,5 +1,6 @@
 package modello;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -17,6 +18,14 @@ public class Prodotto {
 	
 	@OneToMany(mappedBy="prodotto")
 	private List<RigaOrdine> righeOrdine;
+	
+	public void addRigaOrdine(RigaOrdine ro) {
+		if (this.righeOrdine == null) {
+			this.righeOrdine = new ArrayList<>();
+		}
+		this.righeOrdine.add(ro);
+		ro.setProdotto(this);
+	}
 	
 	public String getMarca() {
 		return marca;
