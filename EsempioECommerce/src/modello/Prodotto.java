@@ -27,6 +27,13 @@ public class Prodotto {
 		ro.setProdotto(this);
 	}
 	
+	public void removeRigaOrdine(RigaOrdine ro) {
+		if (this.righeOrdine != null) {
+			this.righeOrdine.remove(ro);
+		}
+		ro.setOrdine(null);
+	}
+	
 	public String getMarca() {
 		return marca;
 	}

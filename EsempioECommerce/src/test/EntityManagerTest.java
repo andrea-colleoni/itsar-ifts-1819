@@ -17,7 +17,7 @@ public class EntityManagerTest {
 	private EntityManagerFactory emf;
 	private EntityManager em;
 	
-	private String codiceFiscaleDiTest = "0123456";
+	private String emailTest = "test@cliente.com";
 	
 	@Before
 	public void inizializza() {
@@ -34,9 +34,9 @@ public class EntityManagerTest {
 	private void inserisciClienteDiTest() {
 		Cliente c = new Cliente();
 		c.setRagioneSociale("Cliente di Test");
-		c.setPartitaIVA(this.codiceFiscaleDiTest);
-		c.setCodiceFiscale(this.codiceFiscaleDiTest);
-		c.setEmail("test@cliente.com");
+		c.setPartitaIVA("012345");
+		c.setCodiceFiscale("012345");
+		c.setEmail(this.emailTest);
 		
 		// salvo il cliente
 		this.em.getTransaction().begin();
@@ -49,7 +49,7 @@ public class EntityManagerTest {
 		this.inserisciClienteDiTest();
 		
 		// recupero il cliente (esempio di lettura per chiave)
-		Cliente c2 = this.em.find(Cliente.class, this.codiceFiscaleDiTest);
+		Cliente c2 = this.em.find(Cliente.class, this.emailTest);
 		assertNotNull("non ho trovato il cliente", c2);
 		
 		// rimuovo il cliente di test
@@ -61,15 +61,16 @@ public class EntityManagerTest {
 	@Test
 	public void modificaClienteTest() {
 		this.inserisciClienteDiTest();
+		
 		// recupero il cliente (esempio di lettura per chiave)
-		Cliente c1 = this.em.find(Cliente.class, this.codiceFiscaleDiTest);
+		Cliente c1 = this.em.find(Cliente.class, this.emailTest);
 		
 		this.em.getTransaction().begin();
 		c1.setPartitaIVA("*****");
 		c1.setEmail("#####");
 		this.em.getTransaction().commit();
 		
-		Cliente c2 = this.em.find(Cliente.class, this.codiceFiscaleDiTest);
+		Cliente c2 = this.em.find(Cliente.class, this.emailTest);
 		assertEquals("la partita IVA non coincide", "*****", c2.getPartitaIVA());
 		assertEquals("l'email non coincide", "#####", c2.getEmail());
 		

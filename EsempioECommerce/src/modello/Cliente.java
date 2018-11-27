@@ -4,18 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Cliente {
+public class Cliente extends Utente {
 	
 	private String ragioneSociale;
-	@Id
 	private String codiceFiscale;
 	private String partitaIVA;
 	private String indirizzo;
-	private String email;
 	private String numeroTelefono;
 	
 	@OneToMany(mappedBy="cliente")
@@ -27,6 +24,13 @@ public class Cliente {
 		}
 		this.ordini.add(o);
 		o.setCliente(this);
+	}
+	
+	public void removeOrdine(Ordine o) {
+		if (this.ordini != null) {
+			this.ordini.remove(o);
+		}
+		o.setCliente(null);
 	}
 	
 	public String getRagioneSociale() {
@@ -52,12 +56,6 @@ public class Cliente {
 	}
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getNumeroTelefono() {
 		return numeroTelefono;
