@@ -41,6 +41,7 @@ public class EntityManagerTest {
 		// salvo il cliente
 		this.em.getTransaction().begin();
 		this.em.persist(c);
+		
 		this.em.getTransaction().commit();
 	}
 
