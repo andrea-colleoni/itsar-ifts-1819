@@ -49,7 +49,7 @@
 							</div>
 						</div>
 					</td>
-					<td>${ p.studente.nome }${ p.studente.cognome }</td>
+					<td>${ p.studente.nome } ${ p.studente.cognome }</td>
 					<td>${ p.registro.titoloCorso }</td>
 					<td>${ p.dataOraEntrata }</td>
 					<td>Dalle ${ p.dataOraEntrata } alle ${ p.dataOraUscita }</td>
@@ -65,11 +65,11 @@
 		data-target="#formPresenza">Aggiungi presenza</p>
 	<div class="collapse" id="formPresenza">
 		<div class="card card-body">
-			<form>
+			<form action="aggiungiPresenza" method="post">
 				<div class="form-group row">
 					<label for="studente" class="col-sm-2 col-form-label">Studente</label>
 					<div class="col-sm-10">
-						<select id="studente" class="form-control">
+						<select id="studente" class="form-control" name="studente">
 					        <option selected>Scegli...</option>
 					        <c:forEach var="s" items="${elencoStudenti}">
 					        	<option value="${s.matricola}">${s.nome} ${s.cognome}</option>
@@ -80,7 +80,7 @@
 				<div class="form-group row">
 					<label for="registro" class="col-sm-2 col-form-label">Registro</label>
 					<div class="col-sm-10">
-						<select id="registro" class="form-control">
+						<select id="registro" class="form-control" name="registro">
 					        <option selected>Scegli...</option>
 					        <c:forEach var="r" items="${elencoRegistri}">
 					        	<option value="${r.codiceCorso}">${r.titoloCorso}</option>
@@ -91,18 +91,23 @@
 				<div class="form-group row">
 					<label for="dataOraEntrata" class="col-sm-2 col-form-label">Data ora entrata</label>
 					<div class="col-sm-10">
-						<input type="date" class="form-control" id="dataOraEntrata" placeholder="Data e ora di entrata">
+						<input type="text" class="form-control" id="dataOraEntrata" 
+								placeholder="Data e ora di entrata (gg/mm/aaaa hh:mm)"
+								name="dataOraEntrata">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="dataOraUscita" class="col-sm-2 col-form-label">Data ora uscita</label>
 					<div class="col-sm-10">
-						<input type="date" class="form-control" id="dataOraUscita" placeholder="Data e ora di uscita">
+						<input type="text" class="form-control" 
+						id="dataOraUscita" 
+						placeholder="Data e ora di uscita (gg/mm/aaaa hh:mm)"
+						name="dataOraUscita">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="note">Note</label>
-					<textarea class="form-control" id="note" rows="3"></textarea>
+					<textarea class="form-control" id="note" rows="3" name="note"></textarea>
 				</div>
 				<div class="form-group row">
 					<div class="col-sm-10">

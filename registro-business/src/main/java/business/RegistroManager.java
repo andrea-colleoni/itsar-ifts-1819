@@ -16,7 +16,7 @@ public class RegistroManager {
 		EntityManager em = JPAUtility.getEm();
 		
 		Registro rDb = em.find(Registro.class, r.getCodiceCorso());
-		if (rDb != null) {
+		if (rDb == null) {
 			em.getTransaction().begin();
 			em.persist(r); 
 			em.getTransaction().commit();

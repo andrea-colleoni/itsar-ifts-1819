@@ -17,7 +17,7 @@ public class StudenteManager {
 		EntityManager em = JPAUtility.getEm();
 		
 		Studente sDb = em.find(Studente.class, s.getMatricola());
-		if (sDb != null) {
+		if (sDb == null) {
 			em.getTransaction().begin();
 			em.persist(s); // aggiungo lo studente a DB
 			em.getTransaction().commit();
