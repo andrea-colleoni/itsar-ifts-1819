@@ -2,6 +2,7 @@ package modello;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -10,6 +11,7 @@ import javax.persistence.OneToMany;
 public class Registro {
 
 	@Id
+	@Column(length=20)
 	private String codiceCorso;
 	private String titoloCorso;
 	
