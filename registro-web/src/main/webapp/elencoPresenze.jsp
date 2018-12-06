@@ -3,6 +3,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,10 +50,12 @@
 										</div>
 									</div>
 								</td>
-								<td>${ p.studente.nome }${ p.studente.cognome }</td>
+								<td>${ p.studente.nome } ${ p.studente.cognome }</td>
 								<td>${ p.registro.titoloCorso }</td>
-								<td>${ p.dataOraEntrata }</td>
-								<td>Dalle ${ p.dataOraEntrata } alle ${ p.dataOraUscita }</td>
+								<td><fmt:formatDate value="${ p.dataOraEntrata }" pattern="dd/MM/yyyy" /></td>
+								<td>
+									Entrata: <fmt:formatDate value="${ p.dataOraEntrata }" pattern="HH:mm" /> 
+									<br>Uscita  <fmt:formatDate value="${ p.dataOraUscita }" pattern="HH:mm" /></td>
 							</tr>
 							<%-- } --%>
 						</c:forEach>
@@ -69,8 +72,8 @@
 						<form action="aggiungiPresenza" method="post">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Nuova
-										presenza</h5>
+									<h4 class="modal-title" id="exampleModalLabel">Nuova
+										presenza</h4>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
@@ -98,16 +101,28 @@
 										</select>
 									</div>
 									<div class="form-group row">
-										<label for="dataOraEntrata">Data ora entrata</label> <input
-											type="text" class="form-control" id="dataOraEntrata"
-											placeholder="Data e ora di entrata (gg/mm/aaaa hh:mm)"
-											name="dataOraEntrata">
+										<label for="dataOraEntrata">Data ora entrata</label>
+										<div class="input-group date" id="dataOraEntrata" data-target-input="nearest">
+											<input
+												type="text" class="form-control datetimepicker-input" data-target="dataOraEntrata"
+												placeholder="Data e ora di entrata"
+												name="dataOraEntrata">
+											<div class="input-group-append" data-target="#dataOraEntrata" data-toggle="datetimepicker">
+						                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+						                    </div>
+					                    </div>
 									</div>
 									<div class="form-group row">
-										<label for="dataOraUscita">Data ora uscita</label> <input
-											type="text" class="form-control" id="dataOraUscita"
-											placeholder="Data e ora di uscita (gg/mm/aaaa hh:mm)"
-											name="dataOraUscita">
+										<label for="dataOraUscita">Data ora uscita</label> 
+										<div class="input-group date" id="dataOraUscita" data-target-input="nearest">
+											<input
+												type="text" class="form-control datetimepicker-input" data-target="dataOraUscita"
+												placeholder="Data e ora di uscita"
+												name="dataOraUscita">
+											<div class="input-group-append" data-target="#dataOraUscita" data-toggle="datetimepicker">
+						                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+						                    </div>
+					                    </div>
 									</div>
 									<div class="form-group">
 										<label for="note">Note</label>
@@ -121,7 +136,6 @@
 							</div>
 						</form>
 					</div>
-
 				</div>
 			</div>
 
@@ -131,5 +145,21 @@
 		<footer>Copyright &copy; 2018</footer>
 	</div>
 	<jsp:include page="frammenti/scripts.frammento"></jsp:include>
+	<script type="text/javascript">
+         $(function () {
+        	 $('#dataOraEntrata').datetimepicker({
+                 locale: 'it',
+                 icons: {
+                     time: "fa fa-clock"
+                 }
+             });
+        	 $('#dataOraUscita').datetimepicker({
+                 locale: 'it',
+                 icons: {
+                     time: "fa fa-clock"
+                 }
+             });        	 
+         });
+     </script>
 </body>
 </html>
