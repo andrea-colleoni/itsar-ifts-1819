@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Elenco presenze</h1>
+		</header>
+		<main class="container">
+		<div class="row">
+			<div id="tblPresenze" class="col-12 row">
+				<table id="presenzeTable" class="table table-hover table-striped col-12">
+				</table>
+				<p class="alert alert-primary col-12">Ho trovato 
+					presenze.</p>
+			</div>
+		</div>
+		</main>
+		<footer>Copyright &copy; 2018</footer>
+	</div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script>
+	$(document).ready( function () {
+		$.ajax('../elencoPresenze')
+		.done((data) => {
+		    $('#presenzeTable').DataTable( {
+		        "data": data,
+		        columns: [
+		        	{ 
+		        		title: 'Matricola',
+		        		data: 'studente.matricola'
+		        	},{ 
+		        		title: 'Nome',
+		        		data: 'studente.nome'
+		        	},{ 
+		        		title: 'Cognome',
+		        		data: 'studente.cognome'
+		        	},{ 
+		        		title: 'Corso',
+		        		data: 'registro.titoloCorso'
+		        	}
+		        ]
+	    	} );
+		});
+	} );
+	</script>
+</body>
+</html>
