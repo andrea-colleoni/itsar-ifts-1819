@@ -3,7 +3,6 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,10 +51,10 @@ public class PrimoController {
 	}
 
 	@RequestMapping(value = "nuovaPersona", 
-			method = RequestMethod.POST,
-	        consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+			method = RequestMethod.POST)
 	// da finire... sostituiremo con request body in JSON
-	public void nuovaPersona(@RequestBody Persona p) {
+	public @ResponseBody String nuovaPersona(@RequestBody Persona p) {
 		System.out.println(p);
+		return p.toString();
 	}
 }
