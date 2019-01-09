@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Primo esempio JS</title>
+    </head>
+    <body>
+        <h1>Esempio JS</h1>
+        <script>
+            // "use strict";
+
+            var z = 'ciao';
+            var a = 'pippo';
+            j = 'globale';
+            function calcola(c, d, e, f) {
+                var a = 10;
+                var b = 20;
+                k = 'locale'; // non è vero che è locale!!
+                if (a > 5) {
+                    var x = 30;
+                    let y = 50;
+                    console.log(x);
+                    console.log(y);
+                }
+                console.log(x);
+                // console.log(y); // darebbe errore perché y è con scope block
+
+                console.log(a); // a locale
+                console.log(this.a); // this indica lo scope globale
+
+                console.log(a + b + c);
+                console.log(z);
+            }
+
+            calcola(20);
+            console.log(a);
+
+            console.debug('debug');
+            console.log('log');
+            console.warn('warn');
+            console.error('error');
+        </script>
+    </body>
+</html>

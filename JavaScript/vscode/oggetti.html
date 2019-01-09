@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <h1>Oggetti in JS</h1>
+        <script>
+            var oggetto1 = new Object();
+            var oggetto2 = {
+                cap: '20100',
+                citta: 'Milano'
+            };
+
+            oggetto1.nome = 'Mario';
+            oggetto1.cognome = 'Rossi';
+
+            oggetto1.indirizzo = oggetto2;
+
+            console.log(oggetto1);
+            console.log(oggetto2);
+
+            var oggetto3 = {
+                nome: 'Andrea',
+                cognome: 'Colleoni',
+                indirizzo: {
+                    cap: '24100',
+                    citta: 'Bergamo',
+                    indirizzoPostale: {
+                        via: 'aaaa',
+                        civico: 100,
+                        scala: 'B'
+                    }
+                }
+            };
+            console.log(oggetto3);
+        </script>
+    </body>
+</html>
