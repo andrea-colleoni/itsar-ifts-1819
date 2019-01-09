@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Studente {
 	
@@ -15,6 +17,7 @@ public class Studente {
 	private String cognome;
 	
 	@OneToMany(mappedBy="studente")
+	@JsonIgnore
 	private List<Presenza> presenze;
 	
 	

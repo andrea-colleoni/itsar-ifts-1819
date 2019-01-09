@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <h1>
+            Funzioni in JS
+        </h1>
+        <script>
+            // dichiarazione di funzione
+            function funz1() {
+                var a = 10;
+                console.log(a);
+            }
+            // chiamata di funzione
+            funz1();
+
+            var ogg1 = {
+                prop: 'valore',
+                funz2: function() {
+                    var b = 20;
+                    console.log(b);
+                }
+            };
+            ogg1.funz2();
+
+            console.log(this);
+            
+            alert('ciao');
+            this.alert('ciao');
+            window.alert('ciao');
+
+        </script>
+    </body>
+</html>

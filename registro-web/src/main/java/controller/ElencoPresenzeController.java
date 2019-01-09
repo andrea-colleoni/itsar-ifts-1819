@@ -20,7 +20,7 @@ import modello.Studente;
 /**
  * Servlet implementation class ElencoPresenzeController
  */
-@WebServlet("/elencoPresenze")
+@WebServlet("/elencoPresenze_old")
 public class ElencoPresenzeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

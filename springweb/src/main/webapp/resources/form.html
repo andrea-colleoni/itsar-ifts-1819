@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<label>Nome</label>
+	<input type="text" id="nome"><br>
+	<label>Cognome</label>
+	<input type="text" id="cognome"><br>
+	<label>Indirizzo</label>
+	<input type="text" id="indirizzo"><br>
+	<input type="button" value="Invia" id="bottone">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+	$(function() {
+		$('#bottone').click(() => {
+			$.ajax({
+				url: '../nuovaPersona',
+				method: 'post',
+				data: JSON.stringify({
+					nome: $('#nome').val(), 
+					cognome: $('#cognome').val(), 
+					indirizzo: $('#indirizzo').val()
+				}),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+			})
+			.done(() => {
+				alert('ok');
+			});
+		});
+	});
+</script>
+</body>
+</html>

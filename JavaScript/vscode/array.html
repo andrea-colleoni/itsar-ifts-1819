@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h1>Arrays in JS</h1>
+        <script>
+            var arr1 = new Array();
+            var arr2 = [1, 2, 3, 4];
+
+            arr1[0] = 10;
+            arr1[1] = 20;
+
+            console.log(arr1);
+            console.log(arr2);
+
+            var arr3 = [];
+            arr3[0] = 10;
+            arr3[1] = 'ciao';
+            arr3[2] = {
+                pippo: 'pluto',
+                aaa: 100000
+            }
+            arr3[100] = 'x';
+            console.log(arr3);
+            arr3.length = 2;
+            console.log(arr3);
+            arr1 = 'ciao';
+            console.log(arr1);
+        </script>
+    </body>
+</html>
