@@ -30,4 +30,9 @@ public class RegistroManager {
 		EntityManager em = JPAUtility.getEm();
 		return em.createQuery("select r from Registro r", Registro.class).getResultList();
 	}
+
+	public static Registro perId(String idRegistro) {
+		EntityManager em = JPAUtility.getEm();
+		return em.find(Registro.class, idRegistro);
+	}
 }

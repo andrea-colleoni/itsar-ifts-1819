@@ -32,4 +32,9 @@ public class StudenteManager {
 		return em.createQuery("select s from Studente s", Studente.class).getResultList();
 	}
 
+	public static Studente perId(Integer idStudente) {
+		EntityManager em = JPAUtility.getEm();
+		return em.find(Studente.class, idStudente);
+	}
+
 }
